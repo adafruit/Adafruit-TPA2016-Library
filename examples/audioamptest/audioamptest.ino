@@ -1,5 +1,5 @@
 /*************************************************** 
-  This is an example for our Adafruit TPA2016D2 Class D Amplifier Breakout
+  This is an example for our Adafruit TPA2016 Class D Amplifier Breakout
 
   Pick one up today in the adafruit shop!
   ------> http://www.adafruit.com/products/1712
@@ -17,9 +17,9 @@
 
 
 #include <Wire.h>
-#include "Adafruit_TPA2016D2.h"
+#include "Adafruit_TPA2016.h"
 
-Adafruit_TPA2016D2 audioamp = Adafruit_TPA2016D2();
+Adafruit_TPA2016 audioamp = Adafruit_TPA2016();
 
 void setup() {
  Serial.begin(9600);
@@ -37,17 +37,6 @@ void setup() {
  }
  */
  
-  // Each channel can be individually controlled
-  Serial.println("Left off");
-  audioamp.enableChannel(true, false);
-  delay(1000);
-  Serial.println("Left On, Right off");
-  audioamp.enableChannel(false, true);
-  delay(1000);
-  Serial.println("Left On, Right On");
-  audioamp.enableChannel(true, true);
-  delay(1000);
-
   // Turn off AGC for the gain test
   audioamp.setAGCCompression(TPA2016_AGC_OFF);
   // we also have to turn off the release to really turn off AGC
@@ -60,27 +49,43 @@ void setup() {
     delay(500);
   }
   
+  // Each channel can be individually controlled
+  Serial.println("Left off");
+  audioamp.enableChannel(true, false);
+  delay(1000);
+  Serial.println("Left On, Right off");
+  audioamp.enableChannel(false, true);
+  delay(1000);
+  Serial.println("Left On, Right On");
+  audioamp.enableChannel(true, true);
+  delay(1000);
+
   // OK now we'll turn the AGC back on and mess with the settings :)
   
   // AGC can be TPA2016_AGC_OFF (no AGC) or
   //  TPA2016_AGC_2 (1:2 compression)
   //  TPA2016_AGC_4 (1:4 compression)
   //  TPA2016_AGC_8 (1:8 compression)
+  Serial.println("Setting AGC Compression");
   audioamp.setAGCCompression(TPA2016_AGC_2);
 
   // See Datasheet page 22 for value -> dBV conversion table
+  Serial.println("Setting Limit Level");
   audioamp.setLimitLevelOn();
   // or turn off with setLimitLevelOff()
   audioamp.setLimitLevel(25);  // range from 0 (-6.5dBv) to 31 (9dBV)
   
   // See Datasheet page 23 for value -> ms conversion table
+  Serial.println("Setting AGC Attack");
   audioamp.setAttackControl(5);
   
   // See Datasheet page 24 for value -> ms conversion table
-  audioamp.setReleaseControl(11);
+  Serial.println("Setting AGC Hold");
+  audioamp.setHoldControl(0);
   
   // See Datasheet page 24 for value -> ms conversion table
-  audioamp.setHoldControl(0);
+  Serial.println("Setting AGC Release");
+  audioamp.setReleaseControl(11);
 }
 
 

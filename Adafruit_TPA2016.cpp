@@ -16,20 +16,20 @@
  ****************************************************/
 
 
-#include <Adafruit_TPA2016D2.h>
+#include <Adafruit_TPA2016.h>
 
-Adafruit_TPA2016D2::Adafruit_TPA2016D2(void) {
+Adafruit_TPA2016::Adafruit_TPA2016(void) {
 }
 
 
-boolean Adafruit_TPA2016D2::begin() {
+boolean Adafruit_TPA2016::begin() {
   Wire.begin();
 
   return true;
 }
 
 // Set the gain in dB!
-void Adafruit_TPA2016D2::setGain(int8_t g) {
+void Adafruit_TPA2016::setGain(int8_t g) {
   if (g > 30) g = 30;
   if (g < -28) g = -28;
 
@@ -37,13 +37,13 @@ void Adafruit_TPA2016D2::setGain(int8_t g) {
 }
 
 // for querying the gain, returns in dB
-int8_t Adafruit_TPA2016D2::getGain(void) {
+int8_t Adafruit_TPA2016::getGain(void) {
 
   return read8(TPA2016_GAIN);
 }
 
 // Turn on/off right and left channels
-void Adafruit_TPA2016D2::enableChannel(boolean r, boolean l) {
+void Adafruit_TPA2016::enableChannel(boolean r, boolean l) {
 
   uint8_t setup = read8(TPA2016_SETUP);
   if (r)
@@ -59,7 +59,7 @@ void Adafruit_TPA2016D2::enableChannel(boolean r, boolean l) {
 }
 
 // Set to OFF, 1:2, 1:4 or 1:8
-void Adafruit_TPA2016D2::setAGCCompression(uint8_t x) {
+void Adafruit_TPA2016::setAGCCompression(uint8_t x) {
   if (x > 3) return; // only 2 bits!
   
   uint8_t agc = read8(TPA2016_AGC);
@@ -68,40 +68,40 @@ void Adafruit_TPA2016D2::setAGCCompression(uint8_t x) {
   write8(TPA2016_AGC, agc);
 }
 
-void Adafruit_TPA2016D2::setReleaseControl(uint8_t release) {
+void Adafruit_TPA2016::setReleaseControl(uint8_t release) {
   if (release > 0x3F) return; // only 6 bits!
 
   write8(TPA2016_REL, release);
 }
 
-void Adafruit_TPA2016D2::setAttackControl(uint8_t attack) {
+void Adafruit_TPA2016::setAttackControl(uint8_t attack) {
   if (attack > 0x3F) return; // only 6 bits!
 
   write8(TPA2016_ATK, attack);
 }
 
-void Adafruit_TPA2016D2::setHoldControl(uint8_t hold) {
+void Adafruit_TPA2016::setHoldControl(uint8_t hold) {
   if (hold > 0x3F) return; // only 6 bits!
 
   write8(TPA2016_HOLD, hold);
 }
 
 // Turn on power limiter
-void Adafruit_TPA2016D2::setLimitLevelOn(void) {
+void Adafruit_TPA2016::setLimitLevelOn(void) {
   uint8_t agc = read8(TPA2016_AGCLIMIT);
   agc &= ~(0x80);  // mask off top bit
   write8(TPA2016_AGCLIMIT, agc);
 }
 
 // Turn off power limiter
-void Adafruit_TPA2016D2::setLimitLevelOff(void) {
+void Adafruit_TPA2016::setLimitLevelOff(void) {
   uint8_t agc = read8(TPA2016_AGCLIMIT);
   agc |= 0x80;  // turn on top bit
   write8(TPA2016_AGCLIMIT, agc);
 }
 
 // Set limit levels
-void Adafruit_TPA2016D2::setLimitLevel(uint8_t limit) {
+void Adafruit_TPA2016::setLimitLevel(uint8_t limit) {
   if (limit > 31) return;
 
   uint8_t agc = read8(TPA2016_AGCLIMIT);
@@ -112,7 +112,7 @@ void Adafruit_TPA2016D2::setLimitLevel(uint8_t limit) {
   write8(TPA2016_AGCLIMIT, agc);
 }
 
-void Adafruit_TPA2016D2::setAGCMaxGain(uint8_t x) {
+void Adafruit_TPA2016::setAGCMaxGain(uint8_t x) {
   if (x > 12) return; // max gain max is 12 (30dB)
   
   uint8_t agc = read8(TPA2016_AGC);
@@ -124,7 +124,7 @@ void Adafruit_TPA2016D2::setAGCMaxGain(uint8_t x) {
 /************************************************************************/
 
 // Read 1 byte from the i2c bus at 'address'
-uint8_t Adafruit_TPA2016D2::read8(uint8_t address)
+uint8_t Adafruit_TPA2016::read8(uint8_t address)
 {
   uint8_t data;
 
@@ -147,7 +147,7 @@ uint8_t Adafruit_TPA2016D2::read8(uint8_t address)
 }
 
 // write 1 byte
-void Adafruit_TPA2016D2::write8(uint8_t address, uint8_t data)
+void Adafruit_TPA2016::write8(uint8_t address, uint8_t data)
 {
   Wire.beginTransmission(TPA2016_I2CADDR);
 #if ARDUINO >= 100

@@ -15,8 +15,8 @@
   BSD license, all text above must be included in any redistribution
  ****************************************************/
 
-#ifndef _ADAFRUIT_TPA2016D2_H
-#define _ADAFRUIT_TPA2016D2_H
+#ifndef _ADAFRUIT_TPA2016_H
+#define _ADAFRUIT_TPA2016_H
 
 #include <Arduino.h>
 #include <Wire.h>
@@ -45,9 +45,9 @@
 #define TPA2016_I2CADDR 0x58
 
 
-class Adafruit_TPA2016D2 {
+class Adafruit_TPA2016 {
  public:
-  Adafruit_TPA2016D2(void);
+  Adafruit_TPA2016(void);
 
   boolean begin(void);
 
