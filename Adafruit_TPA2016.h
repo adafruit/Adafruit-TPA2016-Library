@@ -1,11 +1,12 @@
 /*************************************************** 
-  This is a library for our Adafruit 24-channel PWM/LED driver
+  This is a library for the Adafruit TPA2016D2 Class D Amplifier Breakout
 
   Pick one up today in the adafruit shop!
-  ------> http://www.adafruit.com/products/1429
+  ------> http://www.adafruit.com/products/1712
 
-  These drivers uses SPI to communicate, 3 pins are required to  
-  interface: Data, Clock and Latch. The boards are chainable
+  This amplifier uses I2C to communicate, 2 pins are required to interface
+
+  Check out the links above for our tutorials and wiring diagrams 
 
   Adafruit invests time and resources providing this open source code, 
   please support Adafruit and open-source hardware by purchasing 
