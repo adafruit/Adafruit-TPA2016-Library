@@ -41,7 +41,9 @@ Adafruit_TPA2016::Adafruit_TPA2016() {}
  *
  */
 boolean Adafruit_TPA2016::begin(uint8_t addr, TwoWire *theWire) {
-  Wire.begin();
+  _i2caddr = addr;
+  _wire = theWire;
+  _wire->begin();
 
   return true;
 }
@@ -109,7 +111,7 @@ void Adafruit_TPA2016::setAGCCompression(uint8_t x) {
 
 /*!
  *    @brief  Sets AGC Release time by writing to TPA2016_REL.
- *    @param  release 
+ *    @param  release
  *            release value (only 6 bits)
  */
 void Adafruit_TPA2016::setReleaseControl(uint8_t release) {
@@ -181,7 +183,7 @@ void Adafruit_TPA2016::setLimitLevel(uint8_t limit) {
 /*!
  *    @brief  Sets max gain by writing to TPA2016_AGC.
  *    @param  x
- *            value (max 12) 
+ *            value (max 12)
  */
 void Adafruit_TPA2016::setAGCMaxGain(uint8_t x) {
   if (x > 12)
@@ -197,7 +199,7 @@ void Adafruit_TPA2016::setAGCMaxGain(uint8_t x) {
 uint8_t Adafruit_TPA2016::read8(uint8_t address) {
   uint8_t data;
 
-  Wire.beginTransmission(TPA2016_I2CADDR);
+  _wire->beginTransmission(_i2caddr);
 #if ARDUINO >= 100
   Wire.write(address);
 #else
