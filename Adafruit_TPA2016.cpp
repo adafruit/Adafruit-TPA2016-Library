@@ -8,7 +8,7 @@
  * 	I2C Driver for Adafruit TPA2016D2 Class D Amplifier Breakout
  *
  * 	This is a library for the Adafruit TPA2016D2 breakout
- * 	http://www.adafruit.com/products/1958
+ * 	http://www.adafruit.com/products/1712
  *
  * 	Adafruit invests time and resources providing this open source code,
  *  please support Adafruit and open-source hardware by purchasing products from
