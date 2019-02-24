@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['tpa2016_5fagc',['TPA2016_AGC',['../_adafruit___t_p_a2016_8h.html#adce1118abb8de00fd515877c868776f0',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fagc_5f2',['TPA2016_AGC_2',['../_adafruit___t_p_a2016_8h.html#a8eb0f81f910fe88515cfb9e71dccd7ea',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fagc_5f4',['TPA2016_AGC_4',['../_adafruit___t_p_a2016_8h.html#a34286781d766394f1de6b0314960c3c4',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fagc_5f8',['TPA2016_AGC_8',['../_adafruit___t_p_a2016_8h.html#a0f99fc131ddc25df4a2b12d9deef148a',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fagc_5foff',['TPA2016_AGC_OFF',['../_adafruit___t_p_a2016_8h.html#a4482271b58395a52e9a28f664319af3a',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fagclimit',['TPA2016_AGCLIMIT',['../_adafruit___t_p_a2016_8h.html#a726ed05951162300b4b252ab12956ee8',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fatk',['TPA2016_ATK',['../_adafruit___t_p_a2016_8h.html#a268352e67d555e1f1e1f290eb2e83d52',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fgain',['TPA2016_GAIN',['../_adafruit___t_p_a2016_8h.html#aec949750c065509ac65226566a0bf63f',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fhold',['TPA2016_HOLD',['../_adafruit___t_p_a2016_8h.html#adbe82ed4126a6dd41eda3669ed7126b9',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fi2caddr',['TPA2016_I2CADDR',['../_adafruit___t_p_a2016_8h.html#ad114a33ca480b67f78062c00a12cb7b2',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5frel',['TPA2016_REL',['../_adafruit___t_p_a2016_8h.html#a4e3f94252dd6db69b616c8bce465b174',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fsetup',['TPA2016_SETUP',['../_adafruit___t_p_a2016_8h.html#a5f27c3ec9f987120274b37027c6e7840',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fsetup_5fl_5fen',['TPA2016_SETUP_L_EN',['../_adafruit___t_p_a2016_8h.html#a1dde58d592c3062aa9f55ac3245a717f',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fsetup_5fl_5ffault',['TPA2016_SETUP_L_FAULT',['../_adafruit___t_p_a2016_8h.html#afd65111cda5bfb90355bf8138c8d483e',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fsetup_5fnoisegate',['TPA2016_SETUP_NOISEGATE',['../_adafruit___t_p_a2016_8h.html#adb818301449f3489740a072dfdf271f0',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fsetup_5fr_5fen',['TPA2016_SETUP_R_EN',['../_adafruit___t_p_a2016_8h.html#a34477a1316a2ff1d16f2322b7a27957a',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fsetup_5fr_5ffault',['TPA2016_SETUP_R_FAULT',['../_adafruit___t_p_a2016_8h.html#a53bd583b73b4817f400a7ebd1a402f33',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fsetup_5fsws',['TPA2016_SETUP_SWS',['../_adafruit___t_p_a2016_8h.html#ae80b0dd209c7fad53b9fe79d48b72ec8',1,'Adafruit_TPA2016.h']]],
+  ['tpa2016_5fsetup_5fthermal',['TPA2016_SETUP_THERMAL',['../_adafruit___t_p_a2016_8h.html#a4a7119a9d0586798546fad3be3a90b8f',1,'Adafruit_TPA2016.h']]]
+];
