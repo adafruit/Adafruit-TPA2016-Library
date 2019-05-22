@@ -66,7 +66,13 @@ void Adafruit_TPA2016::setGain(int8_t g) {
  *    @brief  Gets the gain value by readig from TPA2016_GAIN.
  *    @return Returns gain value in dB
  */
-int8_t Adafruit_TPA2016::getGain() { return read8(TPA2016_GAIN); }
+int8_t Adafruit_TPA2016::getGain() { 
+  int8_t gain = int8_t(read8(TPA2016_GAIN));
+  gain = gain << 2;
+  if ((gain & 0x80) > 0) gain = (gain >> 2) | 0xC0;   // it's a negative value
+  else gain = gain >> 2;                              // it's a positive value
+  return gain;
+}
 
 /*!
  *    @brief  Turns on / off right and left channels by writing to
