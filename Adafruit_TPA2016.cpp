@@ -203,16 +203,13 @@ void Adafruit_TPA2016::setAGCMaxGain(uint8_t x) {
 
 // Read 1 byte from the i2c bus at 'address'
 uint8_t Adafruit_TPA2016::read8(uint8_t address) {
-  uint8_t data;
-
   _wire->beginTransmission(_i2caddr);
   Wire.write(address);
   Wire.endTransmission();
 
   Wire.requestFrom(TPA2016_I2CADDR, 1);
-  if (Wire.available()) {
-    return Wire.read();
-  }
+
+  return Wire.read();
 }
 
 // write 1 byte
