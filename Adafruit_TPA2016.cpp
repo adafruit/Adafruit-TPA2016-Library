@@ -200,33 +200,19 @@ uint8_t Adafruit_TPA2016::read8(uint8_t address) {
   uint8_t data;
 
   _wire->beginTransmission(_i2caddr);
-#if ARDUINO >= 100
   Wire.write(address);
-#else
-  Wire.send(address);
-#endif
   Wire.endTransmission();
 
   Wire.requestFrom(TPA2016_I2CADDR, 1);
-  while (!Wire.available())
-    ;
-
-#if ARDUINO >= 100
-  return Wire.read();
-#else
-  return Wire.receive();
-#endif
+  if (Wire.available()) {
+    return Wire.read();
+  }
 }
 
 // write 1 byte
-void Adafruit_TPA2016::write8(uint8_t address, uint8_t data) {
+void Adafruit_TPA2017::write8(uint8_t address, uint8_t data) {
   Wire.beginTransmission(TPA2016_I2CADDR);
-#if ARDUINO >= 100
   Wire.write(address);
   Wire.write(data);
-#else
-  Wire.send(address);
-  Wire.send(data);
-#endif
   Wire.endTransmission();
 }
