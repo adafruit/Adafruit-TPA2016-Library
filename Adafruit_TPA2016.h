@@ -89,9 +89,9 @@ public:
   // Register #7
   void setAGCCompression(uint8_t x);
   void setAGCMaxGain(uint8_t x);
-  uint8_t read8(uint8_t a);
 
 private:
+  uint8_t read8(uint8_t a);
   void write8(uint8_t a, uint8_t d);
   uint8_t _i2caddr;
   TwoWire *_wire;
