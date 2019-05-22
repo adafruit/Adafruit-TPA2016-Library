@@ -210,7 +210,7 @@ uint8_t Adafruit_TPA2016::read8(uint8_t address) {
 }
 
 // write 1 byte
-void Adafruit_TPA2017::write8(uint8_t address, uint8_t data) {
+void Adafruit_TPA2016::write8(uint8_t address, uint8_t data) {
   Wire.beginTransmission(TPA2016_I2CADDR);
   Wire.write(address);
   Wire.write(data);
