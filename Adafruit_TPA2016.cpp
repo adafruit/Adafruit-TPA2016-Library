@@ -64,17 +64,13 @@ boolean Adafruit_TPA2016::begin(uint8_t addr, TwoWire *theWire) {
  *    @brief  Shutdown the amp after begin().
  *
  */
-void Adafruit_TPA2016::powerDown() {
-  digitalWrite(_shutdownPin, LOW);
-}
+void Adafruit_TPA2016::powerDown() { digitalWrite(_shutdownPin, LOW); }
 
 /*!
  *    @brief  Power on the amp after powerDown().
  *
  */
-void Adafruit_TPA2016::powerUp() {
-  digitalWrite(_shutdownPin, HIGH);
-}
+void Adafruit_TPA2016::powerUp() { digitalWrite(_shutdownPin, HIGH); }
 
 /*!
  *    @brief  Set gain in dB by writing to TPA2016_GAIN.
