@@ -1,4 +1,4 @@
-# Adafruit-TPA2016-Library [![Build Status](https://github.com/adafruit/Adafruit-TPA2016-Library/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/adafruit/Adafruit-TPA2016-Library/actions)
+# Adafruit-TPA2016-Library [![Build Status](https://github.com/adafruit/Adafruit-TPA2016-Library/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/adafruit/Adafruit-TPA2016-Library/actions)[![Documentation](https://github.com/adafruit/ci-arduino/blob/master/assets/doxygen_badge.svg)](http://adafruit.github.io/Adafruit-TPA2016-Library/html/index.html)
 
 <a href="https://www.adafruit.com/product/1712"><img src="assets/board.jpg?raw=true" width="500px"></a>
 
