@@ -63,8 +63,11 @@
 class Adafruit_TPA2016 {
 public:
   Adafruit_TPA2016();
+  Adafruit_TPA2016(uint8_t shutdownPin);
 
   boolean begin(uint8_t addr = TPA2016_I2CADDR, TwoWire *theWire = &Wire);
+  void powerDown();
+  void powerUp();
 
   void enableChannel(boolean r, boolean l);
 
@@ -95,6 +98,7 @@ private:
   void write8(uint8_t a, uint8_t d);
   uint8_t _i2caddr;
   TwoWire *_wire;
+  uint8_t _shutdownPin;
 };
 
 #endif

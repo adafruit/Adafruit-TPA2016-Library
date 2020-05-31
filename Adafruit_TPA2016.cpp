@@ -32,6 +32,18 @@
 Adafruit_TPA2016::Adafruit_TPA2016() {}
 
 /*!
+ *    @brief  Enables the ability to power down and power up the amp.
+ *    @param  shutdownPin
+ *            the pin connected to SHDN
+ *
+ */
+Adafruit_TPA2016::Adafruit_TPA2016(uint8_t shutdownPin) {
+  _shutdownPin = shutdownPin;
+  pinMode(_shutdownPin, OUTPUT);
+  digitalWrite(_shutdownPin, HIGH);
+}
+
+/*!
  *    @brief  Setups the i2c and calls powerUp function.
  *    @param  addr
  *            i2c address
@@ -47,6 +59,18 @@ boolean Adafruit_TPA2016::begin(uint8_t addr, TwoWire *theWire) {
 
   return true;
 }
+
+/*!
+ *    @brief  Shutdown the amp after begin().
+ *
+ */
+void Adafruit_TPA2016::powerDown() { digitalWrite(_shutdownPin, LOW); }
+
+/*!
+ *    @brief  Power on the amp after powerDown().
+ *
+ */
+void Adafruit_TPA2016::powerUp() { digitalWrite(_shutdownPin, HIGH); }
 
 /*!
  *    @brief  Set gain in dB by writing to TPA2016_GAIN.
