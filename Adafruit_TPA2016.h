@@ -23,8 +23,8 @@
 #ifndef _ADAFRUIT_TPA2016_H
 #define _ADAFRUIT_TPA2016_H
 
+#include <Adafruit_I2CDevice.h>
 #include <Arduino.h>
-#include <Wire.h>
 
 #define TPA2016_SETUP 0x1       ///< Function Control
 #define TPA2016_SETUP_R_EN 0x80 ///< Enables right amplifier
@@ -91,10 +91,9 @@ public:
   void setAGCMaxGain(uint8_t x);
 
 private:
+  Adafruit_I2CDevice *i2c_dev = NULL; ///< Pointer to I2C bus interface
   uint8_t read8(uint8_t a);
   void write8(uint8_t a, uint8_t d);
-  uint8_t _i2caddr;
-  TwoWire *_wire;
 };
 
 #endif
