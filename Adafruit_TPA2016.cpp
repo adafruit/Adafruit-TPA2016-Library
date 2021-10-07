@@ -41,9 +41,11 @@ Adafruit_TPA2016::Adafruit_TPA2016() {}
  *
  */
 boolean Adafruit_TPA2016::begin(uint8_t addr, TwoWire *theWire) {
-  _i2caddr = addr;
-  _wire = theWire;
-  _wire->begin();
+  if (i2c_dev)
+    delete i2c_dev;
+  i2c_dev = new Adafruit_I2CDevice(addr, theWire);
+  if (!i2c_dev->begin())
+    return false;
 
   return true;
 }
@@ -205,19 +207,13 @@ void Adafruit_TPA2016::setAGCMaxGain(uint8_t x) {
 
 // Read 1 byte from the i2c bus at 'address'
 uint8_t Adafruit_TPA2016::read8(uint8_t address) {
-  _wire->beginTransmission(_i2caddr);
-  Wire.write(address);
-  Wire.endTransmission();
-
-  Wire.requestFrom(TPA2016_I2CADDR, 1);
-
-  return Wire.read();
+  uint8_t buffer[1] = {address};
+  i2c_dev->write_then_read(buffer, 1, buffer, 1);
+  return buffer[0];
 }
 
 // write 1 byte
 void Adafruit_TPA2016::write8(uint8_t address, uint8_t data) {
-  Wire.beginTransmission(TPA2016_I2CADDR);
-  Wire.write(address);
-  Wire.write(data);
-  Wire.endTransmission();
+  uint8_t buffer[2] = {address, data};
+  i2c_dev->write(buffer, 2);
 }
